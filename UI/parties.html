@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Parties</title>
+    <link href="./style/style.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+
+    <script>
+      $(".delete_button").dialog({
+        modal: true,
+        buttons: {
+          Send: function() {
+            document.getElementById("myForm").submit();
+          },
+          Close: function() {
+            $(this).dialog("close");
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">POLITICO</h1>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parties.html">Parties</a></li>
+            <li><a href="create_office.html">Create Post</a></li>
+            <li><a href="create_party.html">Create Party</a></li>
+            <li><a href="create_candidate.html">Create Candidate</a></li>
+            <li><a href="vote.html">Vote</a></li>
+            <li>
+              <a href="login.html"><button>Sign In</button></a>
+            </li>
+
+            <!-- <li><a href="#">About</a></li>
+                      <li><a href="#">Pricing</a></li>
+                      <li><a href="#">Contact</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <form class="form">
+      <table>
+        <tr>
+          <th>Logo</th>
+          <th>Name</th>
+          <th>Slogan</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr>
+          <td><img class="party_logo" src="./images/jubilee.png" /></td>
+          <td>Jubilee</td>
+          <td>Tuko Pamoja</td>
+          <td><img src="./images/edit.png" /></td>
+          <td>
+            <img
+              src="./images/delete.png"
+              onclick="alert('Do you wish to delete the party?')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><img class="party_logo" src="./images/nasa.png" /></td>
+          <td>NASA</td>
+          <td>Tuko Mbele Pamoja</td>
+          <td><img src="./images/edit.png" /></td>
+          <td>
+            <img
+              src="./images/delete.png"
+              onclick="alert('Do you wish to delete the party?')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><img class="party_logo" src="./images/anc.png" /></td>
+          <td>ANC</td>
+          <td>Amani Na Ugatuzi</td>
+          <td><img src="./images/edit.png" /></td>
+          <td>
+            <img
+              src="./images/delete.png"
+              onclick="alert('Do you wish to delete the party?')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><img class="party_logo" src="./images/kanu.png" /></td>
+          <td>KANU</td>
+          <td>KANU Fresh</td>
+          <td><img src="./images/edit.png" /></td>
+          <td>
+            <img
+              src="./images/delete.png"
+              onclick="alert('Do you wish to delete the party?')"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="" async defer></script>
+  </body>
+</html>
