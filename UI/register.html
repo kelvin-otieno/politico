@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <title>Register User</title>
+    <link href="./style/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">POLITICO</h1>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="parties.html">Parties</a></li>
+            <li><a href="create_office.html">Create Post</a></li>
+            <li><a href="create_party.html">Create Party</a></li>
+            <li><a href="create_candidate.html">Create Candidate</a></li>
+            <li><a href="vote.html">Vote</a></li>
+            <li>
+              <a href="login.html"><button>Sign In</button></a>
+            </li>
+
+            <!-- <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li> -->
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="register-page">
+      <div class="title">REGISTER USER</div>
+      <div class="form">
+        <form class="register-form">
+          <input type="text" placeholder="firstname" />
+          <input type="text" placeholder="surname" />
+          <select id="genderList">
+            <option value="1" selected="selected">Male</option>
+            <option value="2">Female</option>
+          </select>
+          <select id="countyList">
+            <option
+              class="first-item"
+              disabled="disabled"
+              selected="selected"
+              hidden
+              >--Choose County--</option
+            >
+            <option value="1">Nakuru</option>
+            <option value="2">Nakuru</option>
+            <option value="3">Kiambu</option>
+            <option value="4">Mombasa</option>
+          </select>
+          <input type="text" placeholder="phone" />
+          <select id="usersList">
+            <option value="1" selected="selected">User</option>
+            <option value="2">Admin</option>
+          </select>
+          <input type="text" placeholder="ID" />
+          <input type="password" placeholder="password" /> <br />
+          <!-- <div class="label"></div> -->
+          <label class="label">Upload your profile picture</label>
+          <input
+            type="file"
+            placeholder="Profile Picture"
+            name="fileToUpload"
+            id="fileToUpload"
+          />
+          <button>register</button>
+          <p class="message">
+            Already registered? <a href="login.html">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
