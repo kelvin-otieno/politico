@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head runat="server">
-    <title>Login</title>
-    <link href="./style/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">POLITICO</h1>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="parties.html">Parties</a></li>
-            <li><a href="create_office.html">Create Post</a></li>
-            <li><a href="create_party.html">Create Party</a></li>
-            <li><a href="create_candidate.html">Create Candidate</a></li>
-            <li><a href="vote.html">Vote</a></li>
-            <li>
-              <a href="login.html"><button>Sign In</button></a>
-            </li>
+<head runat="server">
+  <title>Login</title>
+  <link href="./style/style.css" rel="stylesheet" type="text/css" />
+</head>
 
-            <!-- <li><a href="#">About</a></li>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">POLITICO</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="parties.html">Parties</a></li>
+          <li><a href="create_office.html">Create Post</a></li>
+          <li><a href="create_party.html">Create Party</a></li>
+          <li><a href="create_candidate.html">Create Candidate</a></li>
+          <li><a href="vote.html">Vote</a></li>
+          <li>
+            <a href="login.html"><button>Sign In</button></a>
+          </li>
+
+          <!-- <li><a href="#">About</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Contact</a></li> -->
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="login-page">
-      <div class="title">LOGIN</div>
-      <div class="form">
-        <form class="login-form">
-          <input type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
-          <button>login</button>
-          <p class="message">
-            Not registered? <a href="register.html">Create an account</a>
-          </p>
-          <p class="message">
-            Forgot password? <a href="send_link.html">reset</a>
-          </p>
-        </form>
-      </div>
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+  <div class="login-page">
+    <div class="title">LOGIN</div>
+    <div class="form">
+      <form class="login-form" action="submit" id="loginUser">
+        <input type="text" id="email" placeholder="email" />
+        <input type="password" id="password" placeholder="password" />
+        <input type="submit" value="SUBMIT" id="submit">
+        <p class="message">
+          Not registered? <a href="register.html">Create an account</a>
+        </p>
+        <p class="message">
+          Forgot password? <a href="send_link.html">reset</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById('loginUser').addEventListener('submit', loginUser);
+
+    function loginUser(e) {
+      e.preventDefault();
+      let email = document.getElementById('email').value;
+      let password = document.getElementById('password').value;
+
+      fetch('https://vast-mountain-54945.herokuapp.com/api/v2/auth/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email, password: password
+        })
+      }
+      )
+        .then((res) => res.json())
+        .then((user) => {
+          if (user['status'] == 200) {
+            window.location = "https://kelvin-otieno.github.io/politico//UI/index.html"
+          }
+          else {
+            confirm(user['error'])
+          }
+        })
+    }
+
+  </script>
+</body>
+
 </html>
