@@ -14,6 +14,9 @@
   text-align: center;
   box-shadow: 20px 20px 50px 10px #b0b3ba;
 }
+.list{
+  box-shadow: none;
+}
 .form input {
   font-family: "Roboto", sans-serif;
   background: #f2f2f2;
@@ -24,7 +27,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
-.form button {
+.form button{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   background: #4caf50;
@@ -243,4 +246,15 @@ nav ul li a button {
 .button_link {
   color: white;
   text-decoration: none;
+}
+
+#register{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  background: #4caf50;
+  width: 50%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
 }

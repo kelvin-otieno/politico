@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head runat="server">
-    <title>Register User</title>
-    <link href="./style/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">POLITICO</h1>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="parties.html">Parties</a></li>
-            <li><a href="create_office.html">Create Post</a></li>
-            <li><a href="create_party.html">Create Party</a></li>
-            <li><a href="create_candidate.html">Create Candidate</a></li>
-            <li><a href="vote.html">Vote</a></li>
-            <li>
-              <a href="login.html"><button>Sign In</button></a>
-            </li>
+<head runat="server">
+  <title>Register User</title>
+  <link href="./style/style.css" rel="stylesheet" type="text/css" />
+</head>
 
-            <!-- <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li> -->
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="register-page">
-      <div class="title">REGISTER USER</div>
-      <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="firstname" />
-          <input type="text" placeholder="surname" />
-          <select id="genderList">
-            <option value="1" selected="selected">Male</option>
-            <option value="2">Female</option>
-          </select>
-          <select id="countyList">
-            <option
-              class="first-item"
-              disabled="disabled"
-              selected="selected"
-              hidden
-              >--Choose County--</option
-            >
-            <option value="1">Nakuru</option>
-            <option value="2">Nakuru</option>
-            <option value="3">Kiambu</option>
-            <option value="4">Mombasa</option>
-          </select>
-          <input type="text" placeholder="phone" />
-          <select id="usersList">
-            <option value="1" selected="selected">User</option>
-            <option value="2">Admin</option>
-          </select>
-          <input type="text" placeholder="ID" />
-          <input type="password" placeholder="password" /> <br />
-          <!-- <div class="label"></div> -->
-          <label class="label">Upload your profile picture</label>
-          <input
-            type="file"
-            placeholder="Profile Picture"
-            name="fileToUpload"
-            id="fileToUpload"
-          />
-          <button>register</button>
-          <p class="message">
-            Already registered? <a href="login.html">Login</a>
-          </p>
-        </form>
-      </div>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">POLITICO</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="parties.html">Parties</a></li>
+          <li><a href="create_office.html">Create Post</a></li>
+          <li><a href="create_party.html">Create Party</a></li>
+          <li><a href="create_candidate.html">Create Candidate</a></li>
+          <li><a href="vote.html">Vote</a></li>
+          <li>
+            <a href="login.html"><button>Sign In</button></a>
+          </li>
+
+
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+  <div class="register-page">
+    <div class="title">REGISTER USER</div>
+    <div class="form">
+      <form class="register-form" action="submit" id="addUser">
+        <input type="text" id="firstname" placeholder="firstname" />
+        <input type="text" id="lastname" placeholder="lastname" />
+        <input type="text" id="othername" placeholder="othername" />
+
+        <input type="text" id="phone" placeholder="phone" />
+        <input type="text" id="email" placeholder="email" />
+
+        <input type="text" id="passportUrl" placeholder="passportUrl" />
+        <input type="password" id="password" placeholder="password" />
+        <input type="password" id="confirmpassword" placeholder="confirm password" /> <br />
+
+        <input type="submit" value="SUBMIT" id="register">
+        <p class="message">
+          Already registered? <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('addUser').addEventListener('submit', addUser);
+
+    function addUser(e) {
+      e.preventDefault();
+      let firstname = document.getElementById('firstname').value;
+      let lastname = document.getElementById('lastname').value;
+      let othername = document.getElementById('othername').value;
+      let phone = document.getElementById('phone').value;
+      let email = document.getElementById('email').value;
+      let passportUrl = document.getElementById('passportUrl').value;
+      let password = document.getElementById('password').value;
+      let confirmpassword = document.getElementById('confirmpassword').value;
+
+      fetch('http://vast-mountain-54945.herokuapp.com/api/v2/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          firstname: firstname, lastname: lastname, othername: othername, email: email, phoneNumber: phone,
+          passportUrl: passportUrl, password: password
+        })
+      }
+      )
+        .then((res) => res.json())
+        .then((user) => {
+          if (user['status'] == 200) {
+            confirm(user['message'])
+          }
+          else {
+            confirm(user['error'])
+          }
+        })
+    }
+
+  </script>
+
+
+</body>
+
 </html>
