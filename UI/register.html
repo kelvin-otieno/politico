@@ -79,7 +79,7 @@
       )
         .then((res) => res.json())
         .then((user) => {
-          if (user['status'] == 200) {
+          if (user['status'] == 201) {
             confirm(user['message'])
           }
           else {
