@@ -28,7 +28,7 @@ function createParty(e) {
                     alert(party['message'])
                 }
                 else {
-                    alert("Failed to edit party")
+                    alert(party['error'])
                     // console.log(localStorage.auth)
                 }
             })

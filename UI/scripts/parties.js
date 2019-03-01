@@ -1,4 +1,3 @@
-
 window.onload = getParties;
 function getParties() {
     fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/", {
