@@ -47,7 +47,7 @@ function createParty(e) {
             .then((res) => res.json())
             .then((party) => {
                 if (party['status'] == 201) {
-                    party("Successfully created party")
+                    alert("Successfully created party")
                 }
                 else {
                     alert(party['error'])
