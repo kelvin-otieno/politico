@@ -13,7 +13,17 @@ function getParties() {
             return res.json()
         })
         .then(function (parties) {
-            let output = '';
+            let output = `
+            <tr>
+            <th>ID</th>
+            <th>Logo</th>
+            <th>Name</th>
+            <th>Headquarters</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+            
+            `;
             // console.log(parties)
             if (parties['status'] == 200) {
 
