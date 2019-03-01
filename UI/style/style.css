@@ -248,11 +248,11 @@ nav ul li a button {
   text-decoration: none;
 }
 
-#register{
+#submit{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   background: #4caf50;
-  width: 50%;
+  width: 100%;
   border: 0;
   padding: 15px;
   color: #ffffff;

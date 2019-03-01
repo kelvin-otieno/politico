@@ -1,51 +1,89 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head runat="server">
-    <title>Create Party</title>
-    <link href="./style/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">POLITICO</h1>
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="parties.html">Parties</a></li>
-            <li><a href="create_office.html">Create Post</a></li>
-            <li><a href="create_party.html">Create Party</a></li>
-            <li><a href="create_candidate.html">Create Candidate</a></li>
-            <li><a href="vote.html">Vote</a></li>
-            <li>
-              <a href="login.html"><button>Sign In</button></a>
-            </li>
+<head runat="server">
+  <title>Create Party</title>
+  <link href="./style/style.css" rel="stylesheet" type="text/css" />
+</head>
 
-            <!-- <li><a href="#">About</a></li>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">POLITICO</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="parties.html">Parties</a></li>
+          <li><a href="create_office.html">Create Post</a></li>
+          <li><a href="create_party.html">Create Party</a></li>
+          <li><a href="create_candidate.html">Create Candidate</a></li>
+          <li><a href="vote.html">Vote</a></li>
+          <li>
+            <a href="login.html"><button>Sign In</button></a>
+          </li>
+
+          <!-- <li><a href="#">About</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Contact</a></li> -->
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="login-page">
-      <div class="title">CREATE PARTY</div>
-      <div class="form">
-        <form class="login-form">
-          <input type="text" placeholder="name" />
-          <input type="text" placeholder="slogan" />
-          <label class="label">Upload logo</label>
-
-          <input
-            type="file"
-            placeholder="Profile Picture"
-            name="fileToUpload"
-            id="fileToUpload"
-          />
-          <button>CREATE</button>
-        </form>
-      </div>
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+  <div class="login-page">
+    <div class="title">CREATE PARTY</div>
+    <div class="form">
+      <form class="login-form" id="createParty">
+        <input type="text" id="name" placeholder="name" />
+        <input type="text" id="hqAddress" placeholder="hqAddress" />
+        <input type="text" id="logoUrl" placeholder="logoUrl" />
+        <!-- <label class="label">Upload logo</label> -->
+
+        <!-- <input type="file" placeholder="Profile Picture" name="fileToUpload" id="fileToUpload" /> -->
+        <input type="submit" value="SUBMIT" id="submit">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('createParty').addEventListener('submit', createParty);
+
+    function createParty(e) {
+      e.preventDefault();
+      let name = document.getElementById('name').value;
+      let hqAddress = document.getElementById('hqAddress').value;
+      let logoUrl = document.getElementById('logoUrl').value;
+
+      fetch('https://vast-mountain-54945.herokuapp.com/api/v2/parties/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'token': localStorage.auth,
+          'Accept': '*/*',
+          'Cache-Control': 'no-cache'
+        },
+        body: JSON.stringify({
+          name: name, hqAddress: hqAddress, logoUrl: logoUrl
+        })
+      }
+      )
+        .then((res) => res.json())
+        .then((user) => {
+          if (user['status'] == 201) {
+            confirm("Successfully created party")
+          }
+          else {
+            confirm(user['error'])
+            console.log(localStorage.auth)
+          }
+        })
+    }
+
+
+  </script>
+
+
+</body>
+
 </html>

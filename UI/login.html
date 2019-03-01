@@ -68,7 +68,12 @@
         .then((res) => res.json())
         .then((user) => {
           if (user['status'] == 200) {
-            window.location = "https://kelvin-otieno.github.io/politico//UI/index.html"
+            window.location = "https://kelvin-otieno.github.io/politico/UI/index.html"
+            // sessionStorage.setItem('token', user['data']['token'])
+            localStorage.auth = user['data']['token']
+            // console.log(user['data']['token'])
+            // console.log(localStorage.auth)
+            // document.cookie = "token=" + user['data']['token'];
           }
           else {
             confirm(user['error'])
