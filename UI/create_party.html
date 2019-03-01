@@ -57,12 +57,10 @@
 
       fetch('https://vast-mountain-54945.herokuapp.com/api/v2/parties/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+        headers: new Headers({
           'token': localStorage.auth,
-          'Accept': '*/*',
-          'Cache-Control': 'no-cache'
-        },
+          'Content-Type': 'application/json'
+        }),
         body: JSON.stringify({
           name: name, hqAddress: hqAddress, logoUrl: logoUrl
         })
@@ -75,7 +73,7 @@
           }
           else {
             confirm(user['error'])
-            console.log(localStorage.auth)
+            // console.log(localStorage.auth)
           }
         })
     }
