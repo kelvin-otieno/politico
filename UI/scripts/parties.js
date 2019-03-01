@@ -38,7 +38,7 @@ function getParties() {
       <td>${party.hqAddress}</td>
       <td><button id="editButton" type="button" name="${party.party_id}" onclick=getParty(this.name) >Edit</button></td>
       <td>
-        <button id="deleteButton" style="background:#f7919c" value="${party.party_id}">Delete</button>
+        <button id="deleteButton" style="background:#f7919c" name="${party.party_id}" onclick=deleteParty(this.name)>Delete</button>
       </td>
     </tr>
         
@@ -54,9 +54,6 @@ function getParties() {
         })
 }
 
-function getID(name) {
-    alert(name)
-}
 
 function getParty(party_id) {
     fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
@@ -81,4 +78,34 @@ function getParty(party_id) {
 
 
         })
+}
+
+function deleteParty(party_id) {
+    if (confirm('Sure to delete party?')) {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'token': localStorage.auth
+            })
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then(function (party) {
+                if (party[status] == 200) {
+                    alert(party['message'])
+                    window.location = "https://kelvin-otieno.github.io/politico/UI/parties.html"
+                } else {
+                    alert("Failed to delete party")
+                }
+
+
+
+
+            })
+    } else {
+        // Do nothing!
+    }
+
 }

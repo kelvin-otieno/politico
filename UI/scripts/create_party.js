@@ -28,7 +28,7 @@ function createParty(e) {
                     alert(party['message'])
                 }
                 else {
-                    alert(party['error'])
+                    alert("Failed to edit party")
                     // console.log(localStorage.auth)
                 }
             })
@@ -45,12 +45,12 @@ function createParty(e) {
         }
         )
             .then((res) => res.json())
-            .then((user) => {
-                if (user['status'] == 201) {
-                    confirm("Successfully created party")
+            .then((party) => {
+                if (party['status'] == 201) {
+                    party("Successfully created party")
                 }
                 else {
-                    confirm(user['error'])
+                    alert(party['error'])
                     // console.log(localStorage.auth)
                 }
             })
