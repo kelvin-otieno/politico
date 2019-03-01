@@ -1,7 +1,7 @@
 
 window.onload = getParties;
 function getParties() {
-    fetch("http://vast-mountain-54945.herokuapp.com/api/v2/parties/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -59,7 +59,7 @@ function getID(name) {
 }
 
 function getParty(party_id) {
-    fetch("http://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',
