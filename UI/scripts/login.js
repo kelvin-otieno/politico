@@ -6,7 +6,7 @@ function loginUser(e) {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    fetch('https://vast-mountain-54945.herokuapp.com/api/v2/auth/login/', {
+    fetch('http://vast-mountain-54945.herokuapp.com/api/v2/auth/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
