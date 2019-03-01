@@ -258,3 +258,13 @@ nav ul li a button {
   color: #ffffff;
   font-size: 14px;
 }
+#editButton, #deleteButton{
+  font-family: "Roboto", sans-serif;
+  background: #91f7e9;
+  text-align: center;
+  width: 70%;
+  height: 30%;
+  border-radius: 5%;
+  font-weight: bold;
+  font-size: 12px;
+}

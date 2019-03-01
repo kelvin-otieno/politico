@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="" />
 
-  <script>
+  <!-- <script>
     $(".delete_button").dialog({
       modal: true,
       buttons: {
@@ -27,7 +27,9 @@
         }
       }
     });
-  </script>
+  </script> -->
+
+  <script type="text/javascript" src="./scripts/parties.js"></script>
 </head>
 
 <body>
@@ -55,54 +57,31 @@
     </div>
   </header>
 
-  <form class="form list">
-    <table>
+  <form class="form list" id="getParties">
+    <table id="parties">
       <tr>
+        <th>ID</th>
         <th>Logo</th>
         <th>Name</th>
-        <th>Slogan</th>
+        <th>Headquarters</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
       <tr>
-        <td><img class="party_logo" src="./images/jubilee.png" /></td>
+        <td>1</td>
+        <td><img class="party_logo" src="./images/jubilee.png"
+            onerror="if (this.src != './images/party.png') this.src = './images/party.png';" /></td>
         <td>Jubilee</td>
-        <td>Tuko Pamoja</td>
-        <td><img src="./images/edit.png" /></td>
+        <td>Nairobi</td>
+        <td><button id="editButton">Edit</button></td>
         <td>
-          <img src="./images/delete.png" onclick="alert('Do you wish to delete the party?')" />
+          <button id="deleteButton" style="background:#f7919c">Delete</button>
         </td>
       </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/nasa.png" /></td>
-        <td>NASA</td>
-        <td>Tuko Mbele Pamoja</td>
-        <td><img src="./images/edit.png" /></td>
-        <td>
-          <img src="./images/delete.png" onclick="alert('Do you wish to delete the party?')" />
-        </td>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/anc.png" /></td>
-        <td>ANC</td>
-        <td>Amani Na Ugatuzi</td>
-        <td><img src="./images/edit.png" /></td>
-        <td>
-          <img src="./images/delete.png" onclick="alert('Do you wish to delete the party?')" />
-        </td>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/kanu.png" /></td>
-        <td>KANU</td>
-        <td>KANU Fresh</td>
-        <td><img src="./images/edit.png" /></td>
-        <td>
-          <img src="./images/delete.png" onclick="alert('Do you wish to delete the party?')" />
-        </td>
-      </tr>
+
     </table>
   </form>
-  <script src="" async defer></script>
+
 </body>
 
 </html>
