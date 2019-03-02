@@ -1,91 +1,60 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head runat="server">
-    <title>Create Candidate</title>
-    <link href="./style/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">POLITICO</h1>
 
-        <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="parties.html">Parties</a></li>
-              <li><a href="create_party.html">Create Party</a></li>
-              <li><a href="create_office.html">Create Office</a></li>
-              <li><a href="offices.html">Offices</a></li>
-              <li><a href="create_candidate.html">Create Candidate</a></li>
-              <li><a href="candidates.html">Candidates</a></li>
-              <li><a href="vote.html">Vote</a></li>
-              <li>
-                <a href="login.html"><button>Sign In</button></a>
-              </li>
-    
-              <!-- <li><a href="#">About</a></li>
+<head runat="server">
+  <title>Create Candidate</title>
+  <link href="./style/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">POLITICO</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="parties.html">Parties</a></li>
+          <li><a href="create_party.html">Create Party</a></li>
+          <li><a href="create_office.html">Create Office</a></li>
+          <li><a href="offices.html">Offices</a></li>
+          <li><a href="create_candidate.html">Create Candidate</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="vote.html">Vote</a></li>
+          <li>
+            <a href="login.html"><button>Sign In</button></a>
+          </li>
+
+          <!-- <li><a href="#">About</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Contact</a></li> -->
-            </ul>
-          </nav>
-      </div>
-    </header>
-    <div class="login-page">
-      <div class="title">CREATE CANDIDATE</div>
-      <div class="form">
-        <form class="login-form">
-          <!-- <select id="usersList" style="width:100%;">
-            <option
-              class="first-item"
-              disabled="disabled"
-              selected="selected"
-              hidden
-              >--Choose User--</option
-            >
-            <option value="1">Kelvin Otieno</option>
-            <option value="2">James Nthiani</option>
-          </select> -->
-          <input type="text" placeholder="FullName" />
-          <input type="text" placeholder="ID" />
-          <select id="partyList" style="width:100%;">
-            <option
-              class="first-item"
-              disabled="disabled"
-              selected="selected"
-              hidden
-              >--Choose Party--</option
-            >
-            <option value="1">FORD Kenya</option>
-            <option value="2">Amani National Congress</option>
-          </select>
-          <select id="levelList" style="width:100%;">
-            <option
-              class="first-item"
-              disabled="disabled"
-              selected="selected"
-              hidden
-              >--Choose Level--</option
-            >
-            <option value="1">National Level</option>
-            <option value="2">County Level</option>
-          </select>
-          <select id="officeList" style="width:100%;">
-            <option
-              class="first-item"
-              disabled="disabled"
-              selected="selected"
-              hidden
-              >--Choose Post--</option
-            >
-            <option value="1">Governor</option>
-            <option value="2">President</option>
-            <option value="3">Woman Representative</option>
-          </select>
-
-          <button>create</button>
-        </form>
-      </div>
+        </ul>
+      </nav>
     </div>
-  </body>
+  </header>
+  <div class="login-page">
+    <div class="title">CREATE CANDIDATE</div>
+    <div class="form">
+      <form class="login-form" id="createCandidate">
+
+        <select id="userList" style="width:100%;">
+          <option class="first-item" disabled="disabled" selected="selected" hidden>--Choose User--</option>
+        </select>
+        <select id="partyList" style="width:100%;">
+          <option class="first-item" disabled="disabled" selected="selected" hidden>--Choose Party--</option>
+        </select>
+        <select id="officeList" style="width:100%;">
+          <option class="first-item" disabled="disabled" selected="selected" hidden>--Choose Office--</option>
+        </select>
+
+        <input type="submit" value="SUBMIT" id="submit">
+      </form>
+    </div>
+  </div>
+  <script src="./scripts/fill_combos.js"></script>
+  <script src="./scripts/create_candidate.js"></script>
+</body>
+
 </html>
