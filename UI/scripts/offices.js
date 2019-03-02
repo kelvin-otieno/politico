@@ -76,33 +76,33 @@ function getOffice(office_id) {
         })
 }
 
-// function deleteOffice(office_id) {
-//     answer = confirm('Sure to delete office?')
-//     if (answer) {
-//         fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
-//             method: 'DELETE',
-//             headers: new Headers({
-//                 'Content-Type': 'application/json',
-//                 'token': localStorage.auth
-//             })
-//         })
-//             .then((res) => {
-//                 return res.json()
-//             })
-//             .then(function (office) {
-//                 if (office['status'] == 200) {
-//                     alert(office['message'])
-//                     window.location = "https://kelvin-otieno.github.io/politico/UI/offices.html"
-//                 } else {
-//                     alert(office['error'])
-//                 }
+function deleteOffice(office_id) {
+    answer = confirm('Sure to delete office?')
+    if (answer) {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
+            method: 'DELETE',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'token': localStorage.auth
+            })
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then(function (office) {
+                if (office['status'] == 200) {
+                    alert(office['message'])
+                    window.location = "https://kelvin-otieno.github.io/politico/UI/offices.html"
+                } else {
+                    alert(office['error'])
+                }
 
 
 
 
-//             })
-//     } else {
-//         // Do nothing!
-//     }
+            })
+    } else {
+        // Do nothing!
+    }
 
-// }
+}
