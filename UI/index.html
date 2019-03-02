@@ -4,78 +4,79 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Home</title>
-    <link href="./style/style.css" rel="stylesheet" type="text/css" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">POLITICO</h1>
+<!--<![endif]-->
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="parties.html">Parties</a></li>
-            <li><a href="create_office.html">Create Post</a></li>
-            <li><a href="create_party.html">Create Party</a></li>
-            <li><a href="create_candidate.html">Create Candidate</a></li>
-            <li><a href="vote.html">Vote</a></li>
-            <li>
-              <a href="login.html"><button>Sign In</button></a>
-            </li>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Home</title>
+  <link href="./style/style.css" rel="stylesheet" type="text/css" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="" />
+</head>
 
-            <!-- <li><a href="#">About</a></li>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">POLITICO</h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="parties.html">Parties</a></li>
+          <li><a href="create_party.html">Create Party</a></li>
+          <li><a href="create_office.html">Create Office</a></li>
+          <li><a href="offices.html">Offices</a></li>
+          <li><a href="create_candidate.html">Create Candidate</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="vote.html">Vote</a></li>
+          <li>
+            <a href="login.html"><button>Sign In</button></a>
+          </li>
+
+          <!-- <li><a href="#">About</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Contact</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <table class="results">
+    <tr>
+      <th>My Choice</th>
+      <th>Tallying Center</th>
+    </tr>
+    <tr>
+      <td>
+        <div id="content">
+          <img src="./images/susan.jpg" />
+          <ul>
+            <li>Susan Kihika</li>
+            <li>Senator</li>
+            <li>Nakuru County</li>
+            <li>Jubilee</li>
           </ul>
-        </nav>
-      </div>
-    </header>
 
-    <table class="results">
-      <tr>
-        <th>My Choice</th>
-        <th>Tallying Center</th>
-      </tr>
-      <tr>
-        <td>
-          <div id="content">
-            <img src="./images/susan.jpg" />
-            <ul>
-              <li>Susan Kihika</li>
-              <li>Senator</li>
-              <li>Nakuru County</li>
-              <li>Jubilee</li>
-            </ul>
-
-            <img
-              src="./images/jubilee.png"
-              class="party_logo_results"
-              id="party_logo"
-            />
-            <!-- <span>Susan Kihika</span>
+          <img src="./images/jubilee.png" class="party_logo_results" id="party_logo" />
+          <!-- <span>Susan Kihika</span>
             <span>Woman Representative</span>
              <span>Nakuru County</span>
             <span>Jubilee</span> -->
-          </div>
-        </td>
-        <td><img src="./images/chart.png" id="chart" /></td>
-        <!-- <td>
+        </div>
+      </td>
+      <td><img src="./images/chart.png" id="chart" /></td>
+      <!-- <td>
           <tr>
             <td>President</td>
             <td><img src="./images/chart.png" id="chart" /></td>
           </tr>
         </td> -->
-      </tr>
-    </table>
+    </tr>
+  </table>
 
-    <script src="" async defer></script>
-  </body>
+  <script src="" async defer></script>
+</body>
+
 </html>
