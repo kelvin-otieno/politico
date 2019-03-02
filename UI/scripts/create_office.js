@@ -59,21 +59,21 @@ function createOffice(e) {
 
 }
 
-// function loadOffices() {
-//     if (localStorage.isEdit == 'true') {
-//         document.getElementById('name').value = localStorage.office_name;
-//         console.log(localStorage.office_name)
-//         var textToFind = localStorage.office_type;
-//         var dd = document.getElementById('officeTypeList');
-//         for (var i = 0; i < dd.options.length; i++) {
-//             if (dd.options[i].text === textToFind) {
-//                 dd.selectedIndex = i;
-//                 break;
-//             }
-//         }
+function loadOffices() {
+    if (localStorage.isEdit == 'true') {
+        document.getElementById('name').value = localStorage.office_name;
+        console.log(localStorage.office_name)
+        var textToFind = localStorage.office_type;
+        var dd = document.getElementById('officeTypeList');
+        for (var i = 0; i < dd.options.length; i++) {
+            if (dd.options[i].text === textToFind) {
+                dd.selectedIndex = i;
+                break;
+            }
+        }
 
 
-//         document.getElementById("title").innerText = "UPDATE OFFICE"
+        document.getElementById("title").innerText = "UPDATE OFFICE"
 
-//     }
-// }
+    }
+}

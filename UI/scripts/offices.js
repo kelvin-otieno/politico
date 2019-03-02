@@ -52,29 +52,29 @@ function getOffices() {
 }
 
 
-// function getOffice(office_id) {
-//     fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
-//         method: 'GET',
-//         headers: new Headers({
-//             'Content-Type': 'application/json',
-//             'token': localStorage.auth
-//         })
-//     })
-//         .then((res) => {
-//             return res.json()
-//         })
-//         .then(function (office) {
+function getOffice(office_id) {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
+        method: 'GET',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'token': localStorage.auth
+        })
+    })
+        .then((res) => {
+            return res.json()
+        })
+        .then(function (office) {
 
-//             localStorage.isEdit = new Boolean(true)
-//             localStorage.office_name = office['data'][0]['name']
-//             localStorage.office_type = office['data'][0]['office_type']
-//             localStorage.office_id = office['data'][0]['office_id']
+            localStorage.isEdit = new Boolean(true)
+            localStorage.office_name = office['data'][0]['name']
+            localStorage.office_type = office['data'][0]['office_type']
+            localStorage.office_id = office['data'][0]['office_id']
 
-//             window.location = "https://kelvin-otieno.github.io/politico/UI/create_office.html"
+            window.location = "https://kelvin-otieno.github.io/politico/UI/create_office.html"
 
 
-//         })
-// }
+        })
+}
 
 // function deleteOffice(office_id) {
 //     answer = confirm('Sure to delete office?')
