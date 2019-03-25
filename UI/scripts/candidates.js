@@ -1,5 +1,5 @@
 function getCandidates() {
-    fetch("http://127.0.0.1:5000/api/v2/office/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/office/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,

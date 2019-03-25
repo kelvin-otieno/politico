@@ -9,7 +9,7 @@ function createParty(e) {
     let hqAddress = document.getElementById('hqAddress').value;
     let logoUrl = document.getElementById('logoUrl').value;
     if (localStorage.isEdit == 'true') {
-        fetch('http://127.0.0.1:5000/api/v2/parties/' + localStorage.party_id, {
+        fetch('https://vast-mountain-54945.herokuapp.com/api/v2/parties/' + localStorage.party_id, {
             method: 'PATCH',
             headers: new Headers({
                 'token': localStorage.auth,
@@ -32,7 +32,7 @@ function createParty(e) {
                 }
             })
     } else {
-        fetch('http://127.0.0.1:5000/api/v2/parties/', {
+        fetch('https://vast-mountain-54945.herokuapp.com/api/v2/parties/', {
             method: 'POST',
             headers: new Headers({
                 'token': localStorage.auth,

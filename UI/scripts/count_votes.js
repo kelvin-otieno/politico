@@ -4,7 +4,7 @@ var output = ``;
 
 
 function getVotes() {
-    fetch("http://127.0.0.1:5000/api/v2/offices/voted", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/voted", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -27,7 +27,7 @@ function getVotes() {
 
 
 
-                    fetch("http://127.0.0.1:5000/api/v2/office/" + office.office_id + "/result/", {
+                    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/office/" + office.office_id + "/result/", {
                         method: 'GET',
                         headers: new Headers({
                             'token': localStorage.auth,

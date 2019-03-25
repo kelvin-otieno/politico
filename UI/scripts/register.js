@@ -12,7 +12,7 @@ function addUser(e) {
     let password = document.getElementById('password').value;
     let confirmpassword = document.getElementById('confirmpassword').value;
     if (localStorage.getItem('loggedID') != null) {
-        fetch("http://127.0.0.1:5000/api/v2/auth/" + localStorage.loggedID, {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/auth/" + localStorage.loggedID, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ function addUser(e) {
             })
 
     } else {
-        fetch('http://127.0.0.1:5000/api/v2/auth/signup/', {
+        fetch('https://vast-mountain-54945.herokuapp.com/api/v2/auth/signup/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ function loadUserProfile() {
 }
 
 function getUser(user_id) {
-    fetch("http://127.0.0.1:5000/api/v2/auth/" + user_id, {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/auth/" + user_id, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',

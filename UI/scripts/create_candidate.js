@@ -9,7 +9,7 @@ function createCandidate(e) {
     console.log(user_id)
     console.log(party_id)
     console.log(office_id)
-    fetch('http://127.0.0.1:5000/api/v2/office/' + office_id + '/register/', {
+    fetch('https://vast-mountain-54945.herokuapp.com/api/v2/office/' + office_id + '/register/', {
         method: 'POST',
         headers: new Headers({
             'token': localStorage.auth,

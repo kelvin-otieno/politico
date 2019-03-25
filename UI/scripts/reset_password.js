@@ -6,7 +6,7 @@ function resetPassword(e) {
     let newPassword = document.getElementById('newPassword').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
     if (newPassword == confirmPassword) {
-        fetch("http://127.0.0.1:5000/api/v2/auth/reset", {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/auth/reset", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ function createOffice(e) {
     var sel = document.getElementById("officeTypeList");
     let office_type = sel.options[sel.selectedIndex].text;
     if (localStorage.isEdit == 'true') {
-        fetch('http://127.0.0.1:5000/api/v2/offices/' + localStorage.office_id, {
+        fetch('https://vast-mountain-54945.herokuapp.com/api/v2/offices/' + localStorage.office_id, {
             method: 'PUT',
             headers: new Headers({
                 'token': localStorage.auth,
@@ -32,7 +32,7 @@ function createOffice(e) {
                 }
             })
     } else {
-        fetch('http://127.0.0.1:5000/api/v2/offices/', {
+        fetch('https://vast-mountain-54945.herokuapp.com/api/v2/offices/', {
             method: 'POST',
             headers: new Headers({
                 'token': localStorage.auth,

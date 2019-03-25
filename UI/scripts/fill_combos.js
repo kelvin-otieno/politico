@@ -1,7 +1,7 @@
 window.onload = loadCombos
 
 function loadCombos() {
-    fetch("http://127.0.0.1:5000/api/v2/auth/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/auth/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -37,7 +37,7 @@ function loadCombos() {
 
         })
 
-    fetch("http://127.0.0.1:5000/api/v2/offices/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -70,7 +70,7 @@ function loadCombos() {
             document.getElementById('officeList').innerHTML = output
 
         })
-    fetch("http://127.0.0.1:5000/api/v2/parties/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,

@@ -1,5 +1,5 @@
 function getOffices() {
-    fetch("http://127.0.0.1:5000/api/v2/offices/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -52,7 +52,7 @@ function getOffices() {
 
 
 function getOffice(office_id) {
-    fetch("http://127.0.0.1:5000/api/v2/offices/" + office_id, {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function getOffice(office_id) {
             localStorage.office_type = office['data'][0]['office_type']
             localStorage.office_id = office['data'][0]['office_id']
 
-            window.location = "http://127.0.0.1:5500/UI/create_office.html"
+            window.location = "https://kelvin-otieno.github.io/politico/UI/create_office.html"
 
 
         })
@@ -78,7 +78,7 @@ function getOffice(office_id) {
 function deleteOffice(office_id) {
     answer = confirm('Sure to delete office?')
     if (answer) {
-        fetch("http://127.0.0.1:5000/api/v2/offices/" + office_id, {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/" + office_id, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ function deleteOffice(office_id) {
             .then(function (office) {
                 if (office['status'] == 200) {
                     alert(office['message'])
-                    window.location = "http://127.0.0.1:5500/UI/offices.html"
+                    window.location = "https://kelvin-otieno.github.io/politico/UI/offices.html"
                 } else {
                     alert(office['error'])
                 }

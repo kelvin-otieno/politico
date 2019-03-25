@@ -1,5 +1,5 @@
 function getParties() {
-    fetch("http://127.0.0.1:5000/api/v2/parties/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -54,7 +54,7 @@ function getParties() {
 
 
 function getParty(party_id) {
-    fetch("http://127.0.0.1:5000/api/v2/parties/" + party_id, {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function getParty(party_id) {
             localStorage.logoUrl = party['data'][0]['logoUrl']
             localStorage.party_id = party['data'][0]['party_id']
 
-            window.location = "http://127.0.0.1:5500/UI/create_party.html"
+            window.location = "https://kelvin-otieno.github.io/politico/UI/create_party.html"
 
 
         })
@@ -82,7 +82,7 @@ function deleteParty(party_id) {
     answer = confirm('Sure to delete party?')
     if (answer) {
         console.log('confirmed')
-        fetch("http://127.0.0.1:5000/api/v2/parties/" + party_id, {
+        fetch("https://vast-mountain-54945.herokuapp.com/api/v2/parties/" + party_id, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function deleteParty(party_id) {
             .then(function (party) {
                 if (party['status'] == 200) {
                     alert(party['message'])
-                    window.location = "http://127.0.0.1:5500/UI/parties.html"
+                    window.location = "https://kelvin-otieno.github.io/politico/UI/parties.html"
                 } else {
                     alert('Failed to delete party')
                 }

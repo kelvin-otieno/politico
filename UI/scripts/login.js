@@ -6,7 +6,7 @@ function loginUser(e) {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    fetch('http://127.0.0.1:5000/api/v2/auth/login/', {
+    fetch('https://vast-mountain-54945.herokuapp.com/api/v2/auth/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ function loginUser(e) {
         .then((res) => res.json())
         .then((user) => {
             if (user['status'] == 200) {
-                window.location = "http://127.0.0.1:5500/UI/index.html"
+                window.location = "https://kelvin-otieno.github.io/politico/UI/index.html"
                 // sessionStorage.setItem('token', user['data']['token'])
                 localStorage.auth = user['data']['token']
                 localStorage.loggedID = user['data']['user']['user_id']

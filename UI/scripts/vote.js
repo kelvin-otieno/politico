@@ -1,5 +1,5 @@
 function loadOfficeRadios() {
-    fetch("http://127.0.0.1:5000/api/v2/offices/", {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/offices/", {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
@@ -42,7 +42,7 @@ function loadOfficeRadios() {
 }
 
 function getCandidates(office_id) {
-    fetch("http://127.0.0.1:5000/api/v2/office/" + office_id, {
+    fetch("https://vast-mountain-54945.herokuapp.com/api/v2/office/" + office_id, {
         method: 'GET',
         headers: new Headers({
             'token': localStorage.auth,
