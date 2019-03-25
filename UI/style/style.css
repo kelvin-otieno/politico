@@ -6,10 +6,12 @@
   margin: auto;
 }
 .form {
-  position: relative;
-  background: #ffffff;
+  /* position: relative; */
+  background: white;
   /*max-width: 360px;*/
-  margin: 0 auto 0;
+  /* margin: 0 auto 0; */
+  margin: 10px 0;
+  /* width: ; */
   padding: 45px;
   text-align: center;
   box-shadow: 20px 20px 50px 10px #b0b3ba;
@@ -27,6 +29,7 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+
 .form button{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -126,7 +129,7 @@ table tr {
   font-size: 14px;
 } */
 .container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -147,37 +150,76 @@ header::after {
   margin-left: 0;
 }
 
-nav {
-  float: right;
-  height: 50px;
+nav{
+  width:100%;
+  height: 60px;
+  background-color: #43a047;
+ 
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+nav p{
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+  font-size: 30px;
+  line-height: 55px;
+  float: left;
+  padding:0px 20px;
 }
 
-nav li {
-  display: inline-block;
-  margin-left:40px;
-  padding-top: 30px;
-
-  position: relative;
-}
-
-nav a {
-  color: white;
+nav p a{
   text-decoration: none;
-  text-transform: none;
+  color:white;
+}
+
+nav ul{
+  float: left;
+}
+
+nav ul li{
+  float: left;
+  list-style-type: none;
+  position: relative;
+  padding:0px;
+  margin-right: 40px;
+}
+
+nav ul li a{
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
   font-size: 14px;
+  padding:22px 14px;
+  text-decoration: none;
 }
 
-nav a:hover {
-  color: #000;
+nav ul li ul{
+  display: none;
+  position: absolute;
+  background-color: #43a047;
+  border-radius: 0px 0px 4px 4px;
+  z-index: 10;
 }
 
-nav a::before {
+nav ul li:hover ul{
+  display: block;
+
+}
+
+nav ul li ul li {
+  width:140px;
+  border-radius: 0px 0px 4px 4px;
+}
+nav ul li ul li a{
+  padding:8px 14px;
+}
+
+nav ul li ul li a:hover{
+  background-color: white;
+  color:#43a047;
+}
+
+
+nav ul li a::before {
   content: "";
   display: block;
   height: 5px;
@@ -190,17 +232,52 @@ nav a::before {
   transition: all ease-in-out 250ms;
 }
 
-nav a:hover::before {
+nav ul li ul li a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: white;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: none;
+}
+
+nav ul li a:hover::before {
   width: 100%;
 }
 
+nav ul li ul li a:hover::before {
+  width: 0;
+}
 nav ul li a button {
   background: white;
   color: #43a047;
   border-radius: 30px 30px 30px 30px;
 }
 
-.results td {
+.user-profile img{
+  border-radius: 50%;
+  width:35px;
+  height: 35px;
+  float: right;
+}
+#user-profile{
+  float: right;
+  margin-right: 30px;
+  /* margin-bottom: 10px; */
+}
+
+/* nav span{
+  float: right;
+  margin-right: 0px;
+  margin-top: 10px;
+  padding-right: 0px;
+  color:white;
+} */
+/* .results td {
   width: 50%;
 }
 .results tr {
@@ -209,28 +286,86 @@ nav ul li a button {
 .results th {
   background: white;
   color: #43a047;
+} */
+
+.myChoice{
+  margin-top: 10px;
+  text-align: center;
+  width:100%;
+  float: right;
 }
-.results img {
+
+/* #myChoice{
+  float: left;
+} */
+.myChoice img {
   border-radius: 50px 50px 50px 50px;
   width: 100px;
   height: 100px;
 }
-.results div {
+.myChoice div {
   border: 2px solid #43a047;
   border-radius: 30px 30px 30px 30px;
+  width: 30%;
+  font-style: italic;
+  font-weight: bold;
+  color:white;
+  margin:10px;
+  align-content: center;
 }
-.results ul {
+.myChoice .numbers {
+  border: 2px solid #43a047;
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  font-style: italic;
+  font-weight: bold;
+  color:#43a047;
+  margin:0px;
+  align-content: center;
+}
+.numbers span{
+  padding:50px;
+}
+.myChoice ul {
   list-style-type: none;
   align-content: center;
 }
 
+.myChoice h2{
+  color:#43a047;
+  text-transform: uppercase;
+
+}
+
+.tallyingCenter h2{
+  color:#43a047;
+  text-transform: uppercase;
+
+}
 #content {
   position: relative;
+  text-align: center;
+  margin-right: 35px;
+  background-color: #43a047;
+  display: inline-block;
 }
 #content .party_logo_results {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+#content .results{
+  position: absolute;
+  bottom: 0px;
+  left:0px;
+  margin:5px;
+  background-color: white;
+  color:#43a047;
+  font-size: 20px;
+  border-radius: 30px 30px 30px 30px;
 }
 #party_logo {
   height: 40px;
@@ -275,3 +410,4 @@ nav ul li a button {
   padding:0;
   margin:0;
 }
+

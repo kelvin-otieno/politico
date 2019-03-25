@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
+
 <html class="no-js">
-<!--<![endif]-->
 
 <head>
   <meta charset="utf-8" />
@@ -14,69 +10,59 @@
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="logo">POLITICO</h1>
-
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="parties.html">Parties</a></li>
-          <li><a href="create_party.html">Create Party</a></li>
-          <li><a href="create_office.html">Create Office</a></li>
-          <li><a href="offices.html">Offices</a></li>
-          <li><a href="create_candidate.html">Create Candidate</a></li>
-          <li><a href="candidates.html">Candidates</a></li>
-          <li><a href="vote.html">Vote</a></li>
-          <li>
-            <a href="login.html"><button>Sign In</button></a>
-          </li>
-
-          <!-- <li><a href="#">About</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Contact</a></li> -->
-        </ul>
-      </nav>
-    </div>
+   
   </header>
 
-  <table class="results">
-    <tr>
-      <th>My Choice</th>
-      <th>Tallying Center</th>
-    </tr>
-    <tr>
-      <td>
-        <div id="content">
-          <img src="./images/susan.jpg" />
-          <ul>
-            <li>Susan Kihika</li>
-            <li>Senator</li>
-            <li>Nakuru County</li>
-            <li>Jubilee</li>
-          </ul>
 
-          <img src="./images/jubilee.png" class="party_logo_results" id="party_logo" />
-          <!-- <span>Susan Kihika</span>
-            <span>Woman Representative</span>
-             <span>Nakuru County</span>
-            <span>Jubilee</span> -->
-        </div>
-      </td>
-      <td><img src="./images/chart.png" id="chart" /></td>
-      <!-- <td>
-          <tr>
-            <td>President</td>
-            <td><img src="./images/chart.png" id="chart" /></td>
-          </tr>
-        </td> -->
-    </tr>
-  </table>
+  <!-- <div class="myChoice" id="myChoice">
+    <h2>My Choice</h2>
+    <div id="content">
+      <img src="./images/susan.jpg" />
+      <ul>
+        <li>Susan Kihika</li>
+        <li>Senator</li>
+        <li>Nakuru County</li>
+        <li>Jubilee</li>
+      </ul>
 
-  <script src="" async defer></script>
+      <img src="./images/jubilee.png" class="party_logo_results" id="party_logo" />
+      <span class="results">25%</span>
+    </div>
+    <br>
+    <div id="content">
+      <img src="./images/susan.jpg" />
+      <ul>
+        <li>Susan Kihika</li>
+        <li>Senator</li>
+        <li>Nakuru County</li>
+        <li>Jubilee</li>
+      </ul>
+
+      <img src="./images/jubilee.png" class="party_logo_results" id="party_logo" />
+      <span class="results">25%</span>
+    </div>
+  </div> -->
+
+  <div class="myChoice" id="tallyingCenter">
+    <h2>Tallying Center</h2>
+
+  </div>
+
+  <script src="./scripts/count_votes.js"></script>
+  <script type="text/javascript" src="./scripts/navbar.js"></script>
+  <script>
+    function loadData() {
+      loadNavMenus();
+      getVotes();
+    }
+    window.onload = loadData();
+  </script>
 </body>
 
 </html>

@@ -5,49 +5,40 @@
 <head runat="server">
   <title>Send Reset Link</title>
   <link href="./style/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
-    <div class="container">
-      <h1 class="logo">POLITICO</h1>
 
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="parties.html">Parties</a></li>
-          <li><a href="create_party.html">Create Party</a></li>
-          <li><a href="create_office.html">Create Office</a></li>
-          <li><a href="offices.html">Offices</a></li>
-          <li><a href="create_candidate.html">Create Candidate</a></li>
-          <li><a href="candidates.html">Candidates</a></li>
-          <li><a href="vote.html">Vote</a></li>
-          <li>
-            <a href="login.html"><button>Sign In</button></a>
-          </li>
-
-          <!-- <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li> -->
-        </ul>
-      </nav>
-    </div>
   </header>
   <div class="login-page">
     <div class="title">SEND RESET LINK</div>
     <div class="form">
-      <form class="login-form">
-        <input type="text" placeholder="email" />
-        <button>
+      <form class="login-form" action="submit" id="sendLink">
+        <input type="text" placeholder="email" id="email" />
+        <!-- <button>
           <a class="button_link" href="reset_password.html">SEND LINK</a>
-        </button>
-
+        </button> -->
+        <input type="submit" value="SUBMIT" id="submit">
         <!-- <p class="message">
             Not registered? <a href="register.html">Create an account</a>
           </p> -->
       </form>
     </div>
   </div>
+
+  <script type="text/javascript" src="./scripts/send_link.js"></script>
+  <script type="text/javascript" src="./scripts/navbar.js"></script>
+  <script>
+    function loadData() {
+      loadNavMenus();
+      sendLink();
+    }
+    window.onload = loadData();
+  </script>
+
 </body>
 
 </html>

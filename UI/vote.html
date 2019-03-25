@@ -14,82 +14,88 @@
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">POLITICO</h1>
-
       <nav>
+        <p><a href="index.html">Politico</a> </p>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="parties.html">Parties</a></li>
-          <li><a href="create_party.html">Create Party</a></li>
-          <li><a href="create_office.html">Create Office</a></li>
-          <li><a href="offices.html">Offices</a></li>
-          <li><a href="create_candidate.html">Create Candidate</a></li>
-          <li><a href="candidates.html">Candidates</a></li>
-          <li><a href="vote.html">Vote</a></li>
-          <li>
-            <a href="login.html"><button>Sign In</button></a>
+          <li><a href="#">Parties&nbsp;<span class="fas fa-caret-down"></span></a>
+            <ul>
+              <li><a href="parties.html">Parties</a></li>
+              <li><a href="create_party.html">Create Party</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Offices&nbsp;<span class="fas fa-caret-down"></span></a>
+            <ul>
+              <li><a href="offices.html">Offices</a></li>
+              <li><a href="create_office.html">Create Office</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Candidates&nbsp;<span class="fas fa-caret-down"></span></a>
+            <ul>
+              <li><a href="candidates.html">Candidates</a></li>
+              <li><a href="create_candidate.html">Create Candidate</a></li>
+            </ul>
+          </li>
+          <li><a href="vote.html">Vote</a>
+          </li>
+          <li><a href="#">Petitions&nbsp;<span class="fas fa-caret-down"></span></a>
+            <ul>
+              <li><a href="petitions.html">Petitions</a></li>
+              <li><a href="create_petition.html">Create Petition</a></li>
+            </ul>
           </li>
 
-          <!-- <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li> -->
         </ul>
+
+        <ul id="user-profile">
+          <li>
+            <a href="#" class="user-profile"><img src="./images/user.png" alt=""><span
+                class="fas fa-caret-down"></span></a>
+            <ul>
+              <li><a href="login.html">Sign In</a></li>
+              <li><a href="register.html">Register</a></li>
+              <li><a href="register.html">User Profile</a></li>
+            </ul>
+          </li>
+        </ul>
+
       </nav>
     </div>
   </header>
 
-  <form class="form list">
-    <table>
-      <tr>
-        <th>Candidate</th>
-        <th>Name</th>
-        <th>Office</th>
-        <th>Party</th>
-        <th>Vote</th>
-        <th>Results</th>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/uhuru.png" /></td>
-        <td>Uhuru Muigai Kenyatta</td>
-        <td>President</td>
-        <td>Jubilee</td>
-        <td><input type="radio" name="president" /></td>
-        <td>25%</td>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/raila.png" /></td>
-        <td>Raila Amollo Odinga</td>
-        <td>President</td>
-        <td>NASA</td>
-        <td><input type="radio" name="president" /></td>
-        <td>25%</td>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/mudavadi.png" /></td>
-        <td>Wycliffe Musalia Mudavadi</td>
-        <td>President</td>
-        <td>ANC</td>
-        <td><input type="radio" name="president" /></td>
-        <td>25%</td>
-      </tr>
-      <tr>
-        <td><img class="party_logo" src="./images/moi.png" /></td>
-        <td>Gideon Moi</td>
-        <td>President</td>
-        <td>KANU</td>
-        <td><input type="radio" name="president" /></td>
-        <td>25%</td>
+  <form class="form list" id="createVote">
+
+    <table style="padding:0;">
+      <tr id="officeRadios">
+
       </tr>
     </table>
 
-    <button>Submit</button>
+    <table id="candidates">
+
+    </table>
+
+    <input type="submit" value="SUBMIT" id="submit" style="display:none">
+
   </form>
-  <script src="" async defer></script>
+
+  <script src="./scripts/vote.js"></script>
+  <script src="./scripts/create_vote.js"></script>
+  <script type="text/javascript" src="./scripts/navbar.js"></script>
+  <script>
+    function loadData() {
+      loadNavMenus();
+      loadOfficeRadios();
+    }
+    window.onload = loadData;
+  </script>
 </body>
 
 </html>
